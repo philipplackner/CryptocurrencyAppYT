@@ -25,18 +25,12 @@ class CoinListViewModel @Inject constructor(
 
     private fun getCoins() {
         getCoinsUseCase().onEach { result ->
-            when (result) {
-                is Resource.Success -> {
-                    _state.value = CoinListState(coins = result.data ?: emptyList())
-                }
-                is Resource.Error -> {
-                    _state.value = CoinListState(
+            _state.value = when (result) {
+                is Resource.Success -> CoinListState(coins = result.data ?: emptyList())
+                is Resource.Error -> CoinListState(
                         error = result.message ?: "An unexpected error occured"
                     )
-                }
-                is Resource.Loading -> {
-                    _state.value = CoinListState(isLoading = true)
-                }
+                is Resource.Loading -> CoinListState(isLoading = true)
             }
         }.launchIn(viewModelScope)
     }
