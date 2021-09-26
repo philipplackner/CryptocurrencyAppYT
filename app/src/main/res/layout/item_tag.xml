@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="michael"
+    android:background="@drawable/ic_rounded_rectangle"
+    android:padding="10dp"
+    android:textColor="@color/text_white"
+    android:layout_marginTop="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
