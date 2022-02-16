@@ -8,9 +8,13 @@ plugins {
 android {
     compileSdk 31
 
+   /* repositories {
+        maven { url 'https://jitpack.io' }
+    }*/
+
     defaultConfig {
         applicationId "com.plcoding.cryptocurrencyappyt"
-        minSdk 21
+        minSdk 26
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -37,6 +41,7 @@ android {
     }
     buildFeatures {
         compose true
+        viewBinding=true
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
@@ -64,6 +69,14 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+
+    debugImplementation "androidx.compose.ui:ui-tooling:1.0.5"
+    implementation "androidx.compose.ui:ui-tooling-preview:1.0.5"
 
     // Compose dependencies
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
